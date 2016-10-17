@@ -213,6 +213,10 @@ public class LL<E> {
 		}
 	}
 	public void printForward(int i) {
+		if(empty()) {
+			DoublyLinkedList.out("The list is empty.");
+			return;
+		}
 		if(i < 0) {
 			DoublyLinkedList.out("Enter a positive number.");
 			return;
@@ -229,7 +233,7 @@ public class LL<E> {
 			System.out.print("]");
 			return;
 		}
-		DoublyLinkedList.out("The first " + i + " items going forward are: ");
+		DoublyLinkedList.out("The first " + i + " items going forwards are: ");
 		System.out.print("[");
 		int c = 0;
 		Node<E> temp = first;
@@ -241,14 +245,19 @@ public class LL<E> {
 		System.out.print("].\n");
 	}
 	public void printBackward(int i) {
+		if(empty()) {
+			DoublyLinkedList.out("The list is empty.");
+			return;
+		}
 		if(i < 0) {
 			DoublyLinkedList.out("Enter a positive number.");
 			return;
 		} else if(i == 0) {
 			DoublyLinkedList.out("The first 0 items going backward are: [].");
+			return;
 		}
 		if(size() == 1) {
-			DoublyLinkedList.out("The first " + i + " item going backward is:");
+			DoublyLinkedList.out("The first " + i + " item going backwards is:");
 			System.out.print("[");
 			for(int g = 0; g < i; g++) {
 				System.out.print((g < i-1) ? first.data + ", " : first.data);
@@ -256,7 +265,7 @@ public class LL<E> {
 			System.out.print("]");
 			return;
 		}
-		DoublyLinkedList.out("The first " + i + " items going backward are: ");
+		DoublyLinkedList.out("The first " + i + " items going backwards are: ");
 		System.out.print("[");
 		int c = 0;
 		Node<E> temp = last;
