@@ -1,5 +1,4 @@
 //Code by Samarth Dave
-import java.util.ArrayList;
 public class LL<E> {
 	Node<E> first, last;
 	public LL() {
@@ -293,5 +292,17 @@ public class LL<E> {
 		} while(c < i);
 		sb.append("]");
 		return sb.toString();
+	}
+	public Node<E> getFirstNode() {
+		return first;
+	}
+	public E getFirst() {
+		return (first == null) ? null : first.data;
+	}
+	public Node<E> getLastNode() {
+		return last;
+	}
+	public E getLast() {
+		return (last == null) ? null : last.data;
 	}
 }
